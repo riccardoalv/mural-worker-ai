@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "mural-worker"
+version = "0.1.0"
+description = ""
+authors = ["Ricardo Alves da Silva <ricardcpu@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+
+# Core API
+fastapi = "^0.121.3"
+uvicorn = "^0.38.0"
+python-multipart = "^0.0.20"
+
+# AWS
+boto3 = "^1.41.2"
+
+# Face detection + embeddings
+insightface = "^0.7.3"
+onnxruntime = "^1.19.2"      # CPU
+# Para GPU (CUDA), substitua:
+# onnxruntime-gpu = "^1.19.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
